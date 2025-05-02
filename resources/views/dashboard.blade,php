@@ -1,0 +1,14 @@
+@extends('index')
+
+@section('content')
+<div class="container mt-5 text-center">
+    <h2>Halo, {{ Auth::user()->name }}!</h2>
+    <p>Anda login sebagai <strong>{{ Auth::user()->role }}</strong></p>
+    <a href="{{ route('mahasiswa.index') }}" class="btn btn-success mt-3">Lihat Data Mahasiswa</a>
+
+    <form action="{{ route('logout') }}" method="POST" class="mt-3">
+        @csrf
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+@endsection
